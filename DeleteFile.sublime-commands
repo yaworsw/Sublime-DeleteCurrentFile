@@ -1,0 +1,6 @@
+[
+  {
+    "caption": "File: Delete",
+    "command": "delete_file"
+  }
+]

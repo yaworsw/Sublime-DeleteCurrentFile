@@ -1,4 +1,3 @@
-Sublime-DeleteFile
-==================
+# Sublime-DeleteFile
 
-Adds a File: Delete command which deletes the current file and closes the current buffer.
+This plugin adds a command to the command palette which will delete the current file and close the buffer.

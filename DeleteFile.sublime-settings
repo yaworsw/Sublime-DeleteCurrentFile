@@ -1,0 +1,7 @@
+{
+  // close the current buffer after deleting the current file
+  "auto_close_buffer": true,
+
+  // before doing anything display a prompt
+  "prompt_before_delete": false
+}

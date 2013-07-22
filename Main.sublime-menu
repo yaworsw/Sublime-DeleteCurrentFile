@@ -12,18 +12,18 @@
         "children":
         [
           {
-            "caption": "DeleteFile",
+            "caption": "DeleteCurrentFile",
             "children":
             [
               {
                 "caption": "Settings – Default",
                 "command": "open_file",
-                "args": { "file": "${packages}/DeleteFile/DeleteFile.sublime-settings" },
+                "args": { "file": "${packages}/DeleteFile/DeleteCurrentFile.sublime-settings" },
               },
               {
                 "caption": "Settings – User",
                 "command": "open_file",
-                "args": { "file": "${packages}/User/DeleteFile.sublime-settings" }
+                "args": { "file": "${packages}/User/DeleteCurrentFile.sublime-settings" }
               }
             ]
           }

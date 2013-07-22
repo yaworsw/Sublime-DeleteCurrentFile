@@ -1,8 +1,8 @@
 import sublime, sublime_plugin, os
 
-settings = sublime.load_settings('DeleteFile.sublime-settings')
+settings = sublime.load_settings('DeleteCurrentFile.sublime-settings')
 
-class DeleteFileCommand(sublime_plugin.TextCommand):
+class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
   def run(self, edit, prompt_before_delete=None, auto_close_buffer=None):
 
     if prompt_before_delete == None:
@@ -20,8 +20,8 @@ class DeleteFileCommand(sublime_plugin.TextCommand):
       if not sublime.ok_cancel_dialog('Are you sure you want to delete \'%s\'?' % file):
         return
 
-    if (file != None and os.path.isfile(view.file_name())):
-      os.remove(file)
-
     if auto_close_buffer:
       window.run_command('close')
+
+    if (file != None and os.path.isfile(view.file_name())):
+      os.remove(file)

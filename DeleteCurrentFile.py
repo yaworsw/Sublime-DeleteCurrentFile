@@ -20,7 +20,8 @@ class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
       if not sublime.ok_cancel_dialog('Are you sure you want to delete \'%s\'?' % file):
         return
 
-    view.run_command('save')
+    if view.is_dirty():
+      view.run_command('save')
 
     if auto_close_buffer:
       window.run_command('close_file')

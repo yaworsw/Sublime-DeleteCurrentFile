@@ -1,9 +1,9 @@
 import sublime, sublime_plugin, os
 
-settings = sublime.load_settings('DeleteCurrentFile.sublime-settings')
-
 class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
   def run(self, edit, prompt_before_delete=None, auto_close_buffer=None):
+
+    settings = sublime.load_settings('DeleteCurrentFile.sublime-settings')
 
     if prompt_before_delete == None:
       prompt_before_delete = settings.get('prompt_before_delete', False)

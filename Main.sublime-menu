@@ -18,7 +18,7 @@
               {
                 "caption": "Settings – Default",
                 "command": "open_file",
-                "args": { "file": "${packages}/DeleteFile/DeleteCurrentFile.sublime-settings" },
+                "args": { "file": "${packages}/DeleteCurrentFile/DeleteCurrentFile.sublime-settings" },
               },
               {
                 "caption": "Settings – User",

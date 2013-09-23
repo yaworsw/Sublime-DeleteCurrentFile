@@ -7,14 +7,16 @@ def plugin_loaded():
   settings.add_on_change('extensions_path', update_settings)
 
 def update_settings():
-  globals()['settings'] = sublime.load_settings('ScopeAlways.sublime-settings')
+  global settings
+  settings = sublime.load_settings('ScopeAlways.sublime-settings')
 
 
 class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
 
   def run(self, edit, prompt_before_delete=None, auto_close_buffer=None):
 
-    settings = globals()['settings']
+    global settings
+    settings
 
     if prompt_before_delete == None:
       prompt_before_delete = settings.get('prompt_before_delete', False)

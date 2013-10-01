@@ -8,7 +8,7 @@ def plugin_loaded():
 
 def update_settings():
   global settings
-  settings = sublime.load_settings('ScopeAlways.sublime-settings')
+  settings = sublime.load_settings('DeleteCurrentFile.sublime-settings')
 
 
 class DeleteCurrentFileCommand(sublime_plugin.TextCommand):

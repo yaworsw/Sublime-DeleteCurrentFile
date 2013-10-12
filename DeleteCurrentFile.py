@@ -34,7 +34,7 @@ class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
         return
 
     if view.is_dirty():
-      view.run_command('save')
+      view.set_scratch(True)
 
     if auto_close_buffer:
       window.run_command('close_file')

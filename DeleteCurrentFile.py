@@ -17,7 +17,8 @@ def update_settings():
 
 class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
 
-    def run(self, edit, prompt_before_delete=None, auto_close_buffer=None):
+    def run(self, edit, prompt_before_delete=None, auto_close_buffer=None,
+            move_to_trash=None):
 
         global settings
 
@@ -27,10 +28,15 @@ class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
         if auto_close_buffer is None:
             auto_close_buffer = settings.get('auto_close_buffer', True)
 
+        if move_to_trash is None:
+            move_to_trash = settings.get('move_to_trash', False)
+
         window = sublime.active_window()
         view = sublime.Window.active_view(window)
         file_name = view.file_name()
-        message = "Are you sure you want to delete '{}'?".format(file_name)
+        message = "Are you sure you want to " + \
+            "move '{}' to the trash?" if move_to_trash else "delete '{}'?"
+        message = message.format(file_name)
 
         if prompt_before_delete:
             if not sublime.ok_cancel_dialog(message):
@@ -43,4 +49,10 @@ class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
             window.run_command('close_file')
 
         if (file_name is not None and os.path.isfile(file_name)):
-            os.remove(file_name)
+            if move_to_trash:
+                # Import send2trash on demand, to avoid initialising ctypes
+                # for as long as possible
+                from Default.send2trash import send2trash
+                send2trash(file_name)
+            else:
+                os.remove(file_name)

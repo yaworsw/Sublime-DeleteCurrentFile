@@ -20,7 +20,6 @@ class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
     def run(self, edit, prompt_before_delete=None, auto_close_buffer=None):
 
         global settings
-        settings
 
         if prompt_before_delete is None:
             prompt_before_delete = settings.get('prompt_before_delete', False)
@@ -43,5 +42,5 @@ class DeleteCurrentFileCommand(sublime_plugin.TextCommand):
         if auto_close_buffer:
             window.run_command('close_file')
 
-        if (file_name is not None and os.path.isfile(view.file_name())):
+        if (file_name is not None and os.path.isfile(file_name)):
             os.remove(file_name)

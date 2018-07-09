@@ -16,15 +16,13 @@
             "children":
             [
               {
-                "caption": "Settings – Default",
-                "command": "open_file",
-                "args": { "file": "${packages}/DeleteCurrentFile/DeleteCurrentFile.sublime-settings" },
+                "caption": "Settings",
+                "command": "edit_settings", "args":
+                {
+                  "base_file": "${packages}/DeleteCurrentFile/DeleteCurrentFile.sublime-settings",
+                  "default": "// DeleteCurrentFile Settings - User\n{\n\t$0\n}\n"
+                }
               },
-              {
-                "caption": "Settings – User",
-                "command": "open_file",
-                "args": { "file": "${packages}/User/DeleteCurrentFile.sublime-settings" }
-              }
             ]
           }
         ]

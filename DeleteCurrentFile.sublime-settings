@@ -6,5 +6,5 @@
   "prompt_before_delete": false,
 
   // move to trash instead of deleting
-  "move_to_trash": false
+  "move_to_trash": true
 }

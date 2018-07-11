@@ -19,7 +19,7 @@
                 "caption": "Settings",
                 "command": "edit_settings", "args":
                 {
-                  "base_file": "${packages}/DeleteCurrentFile/DeleteCurrentFile.sublime-settings",
+                  "base_file": "${packages}/Delete Current File/DeleteCurrentFile.sublime-settings",
                   "default": "// DeleteCurrentFile Settings - User\n{\n\t$0\n}\n"
                 }
               },
